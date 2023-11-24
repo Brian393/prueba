@@ -246,7 +246,7 @@ export default {
       queryLayersGeoserverNames: null,
       activeInteractions: [],
       getInfoResult: [],
-      radius: 200,
+      radius: 130,
       mousePosition: undefined,
       spotlightMessage: false,
       lightBoxImages: [],
@@ -356,7 +356,7 @@ export default {
       }).extend([attribution]),
       view: new View({
         center: me.center || [0, 0],
-        minResolution: me.minResolution || 0.25,
+        minResolution: me.minResolution || 0.5,
         maxResolution: me.maxResolution || 64000,
       }),
     });
@@ -421,14 +421,14 @@ export default {
         }
       });
     },
-    resetLayersVisibility() {
+    /** resetLayersVisibility() {
       const visibleLayers = this.visibleGroup.layers;
       this.map.getLayers().forEach(layer => {
         const layerIndex = visibleLayers.indexOf(layer.get('name'));
         if (layerIndex === -1) return;
         layer.setVisible(true);
       });
-    },
+    }, */
     createHtmlPostLayer() {
       const layer = LayerFactory.getInstance(this.htmlPostLayerConf);
       this.setPersistentLayer(layer);
@@ -591,7 +591,7 @@ export default {
      */
     showPopup(clickCoord) {
       // Clear highligh feature (Don't clear if a corporate network entity is selected)
-      if (!this.selectedCoorpNetworkEntity) {
+      if (this.selectedCoorpNetworkEntity) {
         this.popup.highlightLayer.getSource().clear();
       }
 
@@ -732,7 +732,11 @@ export default {
                 attr = translations[this.$i18n.locale].title;
               } else {
                 attr =
-                  feature.get('hoverAttribute') || feature.get('title') || feature.get('entity') || feature.get('NAME');
+                  feature.get('hoverAttribute') ||
+                  feature.get('title') ||
+                  feature.get('entity') ||
+                  feature.get('NAME') ||
+                  feature.get('soybean_importer');
               }
             } else {
               attr =
@@ -1295,9 +1299,9 @@ export default {
       // }
       this.closePopup();
 
-      if (this.$appConfig.app.customNavigationScheme && this.$appConfig.app.customNavigationScheme == '1') {
+      /** if (this.$appConfig.app.customNavigationScheme && this.$appConfig.app.customNavigationScheme == '1') {
         this.resetLayersVisibility();
-      }
+      } */
     },
     ...mapActions('map', {
       fetchColorMapEntities: 'fetchColorMapEntities',
@@ -1496,3 +1500,4 @@ div.ol-control button {
   z-index: 100;
 }
 </style>
+
