@@ -86,6 +86,37 @@
         }
       },
       {
+        "type": "VECTORTILE",
+        "name": "colaboradores",
+        "url": "./geoserver/gwc/service/tms/1.0.0/workspace1:colaboradores@EPSG%3A900913@pbf/{z}/{x}/{-y}.pbf",
+        "group": "data",
+        "queryable": true,
+        "displayInLegend": true,
+        "legendDisplayName": {
+          "en": "Collaborators",
+          "es": " Colaboradores",
+          "pt": "colaboradores"
+        },
+        "format": "MVT",
+        "renderMode": "hybrid",
+        "visible": false,
+        "zIndex": 100,
+        "minResolution": 1,
+        "maxResolution": 20000,
+        "hoverable": true,
+        "style": {
+          "hoverTextColor": "white",
+          "hoverBackgroundColor": "gray",
+          "type": "circle",
+          "radius": 3,
+          "stylePropFnRef": {
+            "fillColor": "variable1"
+            },
+          "strokeColor": "#000000",
+          "strokeWidth": 1
+        }
+      },
+      {
         "type": "VECTOR",
         "name": "random_dots",
         "url": "./geoserver/wfs?service=WFS&version=1.1.0&request=GetFeature&typename=workspace1:random_dots&outputFormat=application/json&srsname=EPSG:3857",
@@ -110,8 +141,10 @@
           "type": "circle",
           "radius": 6,
           "strokeWidth": 1,
-          "strokeColor": "black",
-          "fillColor": "purple",
+          "stylePropFnRef": {
+            "strokeColor": "variable1",
+            "fillColor": "variable2"
+          },
           "hoverTextColor": "white",
           "hoverBackgroundColor": "#000000"
         }
@@ -177,6 +210,36 @@
             "fillColor": "variable2"
           },
           "strokeWidth": 3
+        }
+      },
+      {
+        "type": "VECTOR",
+        "name": "territorios_bioculturales",
+        "url": "./geoserver/wfs?service=WFS&version=1.1.0&request=GetFeature&typename=workspace1:territorios_bioculturales&outputFormat=application/json&srsname=EPSG:3857",
+        "group": "data",
+        "queryable": true,
+        "format": "GeoJSON",
+        "visible": true,
+        "displayInLegend": true,
+        "displaySidebarInfo": true,
+        "legendIcon": "https://crystal-demo.s3.us-east-2.amazonaws.com/assets/icons/polygon.png",
+        "legendDisplayName": {
+          "en": "territorios_bioculturales",
+          "es": "territorios_bioculturales",
+          "pt": "territorios_bioculturales"
+        },
+        "zIndex": 1000,
+        "minResolution": 1,
+        "maxResolution": 64000,
+        "opacity": 1,
+        "label": null,
+        "hoverable": true,
+        "style": {
+          "hoverTextColor": "white",
+          "hoverBackgroundColor": "#000000",
+            "strokeColor": "blue",
+            "fillColor": "yellow",
+          "strokeWidth": 2
         }
       },
       {
@@ -323,36 +386,6 @@
       },
       {
         "type": "VECTOR",
-        "name": "glri_projects",
-        "url": "./geoserver/wfs?service=WFS&version=1.1.0&request=GetFeature&typename=workspace1:glri_projects&outputFormat=application/json&srsname=EPSG:3857",
-        "group": "data",
-        "queryable": true,
-        "displayInLegend": true,
-        "legendDisplayName": {
-          "en": "Restoration projects",
-          "es": "Proyectos de restauro",
-          "pt": "Proyectos de restauro"
-        },
-        "format": "GEOJSON",
-        "visible": true,
-        "zIndex": 100,
-        "minResolution": 1,
-        "maxResolution": 64000,
-        "hoverable": true,
-        "style": {
-          "hoverTextColor": "white",
-          "hoverBackgroundColor": "variable1",
-          "type": "circle",
-          "stylePropFnRef": {
-            "fillColor": "variable1",
-            "radius": "variable2"
-          },
-          "strokeColor": "#ffffff",
-          "strokeWidth": 0.4
-        }
-      },
-      {
-        "type": "VECTOR",
         "name": "Rosario",
         "url": "https://map.casariolab.art/geoserver/wfs?service=WFS&version=1.1.0&request=GetFeature&typename=workspace1:puerto_rosario&outputFormat=application/json&srsname=EPSG:3857",
         "queryable": true,
@@ -458,6 +491,37 @@
           "pt": "Foco satelital"
         },
         "visible": true
+      },
+      {
+        "type": "VECTORTILE",
+        "name": "glri_projects",
+        "url": "./geoserver/gwc/service/tms/1.0.0/workspace1:glri_projects@EPSG%3A900913@pbf/{z}/{x}/{-y}.pbf",
+        "group": "data",
+        "queryable": true,
+        "displayInLegend": true,
+        "legendDisplayName": {
+          "en": "Restoration sites",
+          "es": "Proyectos de restauro",
+          "pt": "Projetos de restauração"
+        },
+        "format": "MVT",
+        "renderMode": "hybrid",
+        "visible": false,
+        "zIndex": 100,
+        "minResolution": 1,
+        "maxResolution": 20000,
+        "hoverable": true,
+        "style": {
+          "hoverTextColor": "white",
+          "hoverBackgroundColor": "gray",
+          "type": "circle",
+          "stylePropFnRef": {
+            "radius": "variable2",
+            "fillColor": "variable1"
+          },
+          "strokeColor": "#000000",
+          "strokeWidth": 1
+        }
       },
       {
         "type": "XYZ",
@@ -567,7 +631,7 @@
           "maxResolution": 64000
         },
         "global": {
-          "layers": ["carto_dark", "ESRI-World-Imagery2", "burnables"],
+          "layers": ["carto_dark", "ESRI-World-Imagery2", "burnables", "colaboradores", "territorios_bioculturales"],
           "center": [-12.42, 29.84],
           "resolution": 68000,
           "mobileResolution": 80000,

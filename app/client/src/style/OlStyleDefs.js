@@ -609,6 +609,13 @@ export const layersStylePropFn = {
     strokeColor: propertyValue => propertyValue,
     fillColor: propertyValue => propertyValue,
   },
+  random_dots: {
+    strokeColor: propertyValue => propertyValue,
+    fillColor: propertyValue => propertyValue,
+  },
+  colaboradores: {
+    fillColor: propertyValue => propertyValue,
+  },
   points: {
     strokeColor: propertyValue => propertyValue,
     fillColor: propertyValue => propertyValue,
