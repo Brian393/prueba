@@ -597,17 +597,64 @@ export const layersStylePropFn = {
     radius: propertyValue => getRadiusValue(propertyValue),
     iconUrl: propertyValue => propertyValue,
   },
-  glri_projects: {
+  colaboradores: {
     fillColor: propertyValue => propertyValue,
-    radius: propertyValue => getRadiusValue(propertyValue, 0.012, 2, 26),
   },
-  burnables: {
+  glp_componentes: {
     fillColor: propertyValue => propertyValue,
-    radius: propertyValue => getRadiusValue(propertyValue, 0.2, 3, 26),
   },
-  polygons: {
+  fcs_poligonos: {
+    fillColor: propertyValue => propertyValue,
+  },
+  fcs_lineas: {
     strokeColor: propertyValue => propertyValue,
+    strokeWidth: propertyValue => propertyValue,
+  },
+  cld_lineas: {
+    strokeColor: propertyValue => propertyValue,
+    strokeWidth: propertyValue => propertyValue,
+  },
+  cld_poligonos: {
     fillColor: propertyValue => propertyValue,
+  },
+  cmr_poligonos: {
+    fillColor: propertyValue => propertyValue,
+  },
+  cmr_puntos: {
+    fillColor: propertyValue => propertyValue,
+  },
+  cmr_lineas: {
+    strokeColor: propertyValue => propertyValue,
+  },
+  poligonos_extractivistas: {
+    fillColor: propertyValue => propertyValue,
+  },
+  puntos_extractivistas: {
+    fillColor: propertyValue => propertyValue,
+  },
+  lineas_extractivistas: {
+    strokeColor: propertyValue => propertyValue,
+    strokeWidth: propertyValue => propertyValue,
+  },
+  poligonos_bioculturales: {
+    fillColor: propertyValue => propertyValue,
+  },
+  puntos_bioculturales: {
+    fillColor: propertyValue => propertyValue,
+  },
+  lineas_bioculturales: {
+    strokeColor: propertyValue => propertyValue,
+    strokeWidth: propertyValue => propertyValue,
+  },
+  fire_hidrografia: {
+    strokeColor: propertyValue => propertyValue,
+    strokeWidth: propertyValue => propertyValue,
+  },
+  fire_puntos: {
+    fillColor: propertyValue => propertyValue,
+  },
+  hidrovia3_calados: {
+    strokeColor: propertyValue => propertyValue,
   },
   points: {
     strokeColor: propertyValue => propertyValue,
@@ -617,7 +664,22 @@ export const layersStylePropFn = {
     strokeColor: propertyValue => propertyValue,
     strokeWidth: propertyValue => propertyValue,
   },
+  gas: {
+    iconScaleFn: propertyValue => getIconScaleValue(propertyValue, 1400, 0.3, 1.4),
+  },
+  oil: {
+    circleRadiusFn: propertyValue => getRadiusValue(propertyValue, 0.3, 4, 50),
+  },
   Rosario: {
-    strokeWidth: propertyValue => propertyValue / 100000,
+    strokeWidth: propertyValue => propertyValue / 200000,
+  },
+  San_Lorenzo: {
+    strokeWidth: propertyValue => propertyValue / 200000,
+  },
+  Bahia_Blanca: {
+    strokeWidth: propertyValue => propertyValue / 200000,
+  },
+  Neocochea: {
+    strokeWidth: propertyValue => propertyValue / 200000,
   },
 };
