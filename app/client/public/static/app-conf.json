@@ -76,37 +76,6 @@
         }
       },
       {
-        "type": "VECTORTILE",
-        "name": "colaboradores",
-        "url": "./geoserver/gwc/service/tms/1.0.0/workspace1:colaboradores@EPSG%3A900913@pbf/{z}/{x}/{-y}.pbf",
-        "group": "data",
-        "queryable": true,
-        "displayInLegend": true,
-        "legendDisplayName": {
-          "en": "Collaborators",
-          "es": " Colaboradores",
-          "pt": "colaboradores"
-        },
-        "format": "MVT",
-        "renderMode": "hybrid",
-        "visible": false,
-        "zIndex": 100,
-        "minResolution": 1,
-        "maxResolution": 20000,
-        "hoverable": true,
-        "style": {
-          "hoverTextColor": "white",
-          "hoverBackgroundColor": "gray",
-          "type": "circle",
-          "radius": 3,
-          "stylePropFnRef": {
-            "fillColor": "variable1"
-          },
-          "strokeColor": "#000000",
-          "strokeWidth": 1
-        }
-      },
-      {
         "type": "VECTOR",
         "name": "puntos_extractivistas",
         "url": "./geoserver/wfs?service=WFS&version=1.1.0&request=GetFeature&typename=workspace1:puntos_extractivistas&outputFormat=application/json&srsname=EPSG:3857",
